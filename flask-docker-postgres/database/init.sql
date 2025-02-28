@@ -1,9 +1,6 @@
-CREATE DATABASE mydatabase;
-
-\c mydatabase;
-
-CREATE TABLE users (
-    id SERIAL PRIMARY KEY,
-    name VARCHAR(100),
-    email VARCHAR(100) UNIQUE NOT NULL
-);
+DO $$ 
+BEGIN
+   IF NOT EXISTS (SELECT FROM pg_database WHERE datname = 'mydatabase') THEN
+      CREATE DATABASE mydatabase;
+   END IF;
+END $$;
