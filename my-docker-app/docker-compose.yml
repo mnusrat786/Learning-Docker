@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  web:
+    build: .   # Change this line to build locally instead of pulling from Docker Hub
+    ports:
+      - "5001:5000"
+    depends_on:
+      - db
+
+  db:
+    image: postgres
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: secret
+      POSTGRES_DB: mydatabase
