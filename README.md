@@ -1,4 +1,3 @@
-
 # Flask Dockerized CRUD API with PostgreSQL
 This is a simple Flask API running inside a Docker container with a PostgreSQL database
 
